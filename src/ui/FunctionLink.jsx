@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function FunctionLink({ children, icon, to = "/not-added" }) {
+function FunctionLink({ children, icon, to = "#" }) {
   return (
     <NavLink
       to={to}

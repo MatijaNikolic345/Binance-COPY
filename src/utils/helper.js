@@ -187,32 +187,41 @@ const languages = [
   { code: "zu", name: "Zulu" },
 ];
 export function getTimeUntilDate() {
-  let date1 = new Date();
-  let date2 = new Date("04/07/2024");
+  const date1 = new Date();
+  const date2 = new Date("04/07/2024");
 
   let differenceInTime = (date2.getTime() - date1.getTime()) / 1000;
 
-  let days = Math.floor(differenceInTime / 86400);
+  const days = Math.floor(differenceInTime / 86400);
   differenceInTime -= days * 86400;
-  let hours = Math.floor(differenceInTime / 3600) % 24;
+  const hours = Math.floor(differenceInTime / 3600) % 24;
   differenceInTime -= hours * 3600;
 
-  let minutes = Math.floor(differenceInTime / 60) % 60;
+  const minutes = Math.floor(differenceInTime / 60) % 60;
   differenceInTime -= minutes * 60;
 
   let seconds = differenceInTime % 60;
   seconds = +seconds.toFixed(0);
+  if (days < 1) {
+    return { days: 0, hours: 23, minutes: 50, seconds: 43 };
+  }
   return { days, hours, minutes, seconds };
 }
 
 export async function getCryptoPriceAnd24hChange(id) {
-  const res = await fetch(
-    `https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_24hr_change=true`
-  );
+  try {
+    const res = await fetch(
+      `https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_24hr_change=true`
+    );
 
-  const data = await res.json();
+    const data = await res.json();
 
-  return data[id];
+    return data[id];
+  } catch (err) {
+    console.log(
+      "Crypto API overloaded, wait a minute before refreshing to get the correct crypto values back."
+    );
+  }
 }
 export const TradeBasicArr = ["Spot", "Margin", "P2P", "Convert & Block Trade"];
 export const TradeAdvancedArr = ["Trading Bots", "Copy Trading", "APIs"];

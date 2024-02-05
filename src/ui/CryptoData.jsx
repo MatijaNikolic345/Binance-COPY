@@ -37,7 +37,13 @@ function CryptoData() {
     }, 100);
     return () => clearTimeout(timer);
   }, []);
-
+  if (
+    dataBtc === null ||
+    dataBnb === null ||
+    dataEth === null ||
+    dataXrp === null
+  )
+    return;
   return (
     <div className="flex flex-col lg:w-full md:w-[23rem] w-full">
       <div className="flex justify-center md:hidden w-full mb-6 mt-5">
@@ -57,7 +63,8 @@ function CryptoData() {
           </p>
         </div>
         <div className="dark:text-zinc-200 text-zinc-800 font-semibold w-20">
-          {formatCurrency(dataBtc?.usd)}
+          {isNaN(dataBtc?.usd) && formatCurrency(40102)}
+          {!isNaN(dataBtc?.usd) && formatCurrency(dataBtc?.usd)}
         </div>
         <div
           className={`${
@@ -67,7 +74,10 @@ function CryptoData() {
           } font-semibold w-14`}
         >
           <span>{Number(dataBtc?.usd_24h_change) > 0 && "+"}</span>
-          {Number(dataBtc?.usd_24h_change)?.toFixed(2)}%
+          {isNaN(dataBtc?.usd_24h_change) && Number(-1).toFixed(2)}
+          {!isNaN(dataBtc?.usd_24h_change) &&
+            Number(dataBtc?.usd_24h_change)?.toFixed(2)}
+          %
         </div>
       </div>
       <div className="flex justify-between dark:hover:bg-zinc-600 hover:bg-zinc-300 md:py-2.5 md:px-2.5 py-3.5  rounded-md items-center cursor-pointer">
@@ -86,7 +96,8 @@ function CryptoData() {
         </div>
         <div className="dark:text-zinc-200 text-zinc-800 font-semibold  w-20">
           {" "}
-          {formatCurrency(dataEth?.usd)}
+          {isNaN(dataEth?.usd) && formatCurrency(2550)}
+          {!isNaN(dataEth?.usd) && formatCurrency(dataEth?.usd)}
         </div>
         <div
           className={`${
@@ -96,7 +107,10 @@ function CryptoData() {
           } font-semibold w-14`}
         >
           <span>{Number(dataEth?.usd_24h_change) > 0 && "+"}</span>
-          {Number(dataEth?.usd_24h_change)?.toFixed(2)}%
+          {isNaN(dataEth?.usd_24h_change) && Number(-2).toFixed(2)}
+          {!isNaN(dataEth?.usd_24h_change) &&
+            Number(dataEth?.usd_24h_change)?.toFixed(2)}
+          %
         </div>
       </div>
       <div className="flex justify-between dark:hover:bg-zinc-600 hover:bg-zinc-300 md:py-2.5 md:px-2.5 py-3.5  rounded-md items-center cursor-pointer">
@@ -114,7 +128,8 @@ function CryptoData() {
           </p>
         </div>
         <div className="dark:text-zinc-200 text-zinc-800 font-semibold  w-20">
-          {formatCurrency(dataBnb?.usd)}
+          {isNaN(dataBnb?.usd) && formatCurrency(303)}
+          {!isNaN(dataBnb?.usd) && formatCurrency(dataBnb?.usd)}
         </div>
         <div
           className={`${
@@ -124,7 +139,10 @@ function CryptoData() {
           } font-semibold w-14`}
         >
           <span>{Number(dataBnb?.usd_24h_change) > 0 && "+"}</span>
-          {Number(dataBnb?.usd_24h_change)?.toFixed(2)}%
+          {isNaN(dataBnb?.usd_24h_change) && Number(-1.3).toFixed(2)}
+          {!isNaN(dataBnb?.usd_24h_change) &&
+            Number(dataBnb?.usd_24h_change)?.toFixed(2)}
+          %
         </div>
       </div>
       <div className="flex justify-between dark:hover:bg-zinc-600 hover:bg-zinc-300 md:py-2.5 md:px-2.5 py-3.5  rounded-md items-center cursor-pointer">
@@ -141,7 +159,8 @@ function CryptoData() {
           </p>
         </div>
         <div className="dark:text-zinc-200 text-zinc-800 font-semibold  w-20">
-          {formatCurrency(dataXrp?.usd)}
+          {isNaN(dataXrp?.usd) && formatCurrency(0.5103)}
+          {!isNaN(dataXrp?.usd) && formatCurrency(dataXrp?.usd)}
         </div>
         <div
           className={`${
@@ -151,7 +170,10 @@ function CryptoData() {
           } font-semibold w-14`}
         >
           <span>{Number(dataXrp?.usd_24h_change) > 0 && "+"}</span>
-          {Number(dataXrp?.usd_24h_change)?.toFixed(2)}%
+          {isNaN(dataXrp?.usd_24h_change) && Number(-3.2).toFixed(2)}
+          {!isNaN(dataXrp?.usd_24h_change) &&
+            Number(dataXrp?.usd_24h_change)?.toFixed(2)}
+          %
         </div>
       </div>
       <div className="flex items-center md:justify-normal justify-center gap-2 w-50 p-3">
