@@ -51,10 +51,7 @@ function CryptoData() {
       </div>
       <div className="flex justify-between dark:hover:bg-zinc-600 hover:bg-zinc-300 md:py-2.5 md:px-2.5 py-3.5 rounded-md items-center cursor-pointer">
         <div className="flex items-center gap-2 w-40">
-          <img
-            src="./node_modules/cryptocurrency-icons/32/color/btc.png"
-            alt=""
-          />
+          <img src="/images/btc.png" alt="" />
           <p className="dark:text-zinc-200 text-zinc-800 font-semibold">
             BTC{" "}
             <span className="dark:text-zinc-500 text-zinc-400 font-medium text-sm mr-2">
@@ -83,10 +80,7 @@ function CryptoData() {
       <div className="flex justify-between dark:hover:bg-zinc-600 hover:bg-zinc-300 md:py-2.5 md:px-2.5 py-3.5  rounded-md items-center cursor-pointer">
         <div className="flex items-center gap-2 w-40">
           {" "}
-          <img
-            src="./node_modules/cryptocurrency-icons/32/color/eth.png"
-            alt=""
-          />
+          <img src="/images/eth.png" alt="" />
           <p className="dark:text-zinc-200 text-zinc-800 font-semibold">
             Eth{" "}
             <span className="dark:text-zinc-500 text-zinc-400 font-medium text-sm mr-2">
@@ -116,10 +110,7 @@ function CryptoData() {
       <div className="flex justify-between dark:hover:bg-zinc-600 hover:bg-zinc-300 md:py-2.5 md:px-2.5 py-3.5  rounded-md items-center cursor-pointer">
         <div className="flex items-center gap-2 w-40">
           {" "}
-          <img
-            src="./node_modules/cryptocurrency-icons/32/color/bnb.png"
-            alt=""
-          />
+          <img src="/images/bnb.png" alt="" />
           <p className="dark:text-zinc-200 text-zinc-800 font-semibold">
             BNB{" "}
             <span className="dark:text-zinc-500 text-zinc-400 font-medium text-sm mr-2">
@@ -147,10 +138,7 @@ function CryptoData() {
       </div>
       <div className="flex justify-between dark:hover:bg-zinc-600 hover:bg-zinc-300 md:py-2.5 md:px-2.5 py-3.5  rounded-md items-center cursor-pointer">
         <div className="flex items-center gap-2 w-40">
-          <img
-            src="./node_modules/cryptocurrency-icons/32/color/xrp.png"
-            alt=""
-          />
+          <img src="/images/xrp.png" alt="" />
           <p className="dark:text-zinc-200 text-zinc-800 font-semibold">
             XRP{" "}
             <span className="dark:text-zinc-500 text-zinc-400 font-medium text-sm mr-2">
