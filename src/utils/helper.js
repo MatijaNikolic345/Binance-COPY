@@ -203,7 +203,7 @@ export function getTimeUntilDate() {
   let seconds = differenceInTime % 60;
   seconds = +seconds.toFixed(0);
   if (days < 1) {
-    return { days: 0, hours: 23, minutes: 50, seconds: 43 };
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
   return { days, hours, minutes, seconds };
 }
