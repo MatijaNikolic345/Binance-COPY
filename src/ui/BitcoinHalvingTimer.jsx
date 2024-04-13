@@ -30,7 +30,7 @@ function BitcoinHalvingTimer() {
           </HoverField>
         </div>
       </div>
-      <div className="flex gap-4">
+      {/*      <div className="flex gap-4">
         <div className="font-bold text-3xl text-zinc-900 dark:text-zinc-200">
           {time.days} <span className="text-lg">D</span>
         </div>
@@ -43,6 +43,9 @@ function BitcoinHalvingTimer() {
         <div className="font-bold text-3xl text-zinc-900 dark:text-zinc-200">
           {time.seconds} <span className="text-lg">S</span>
         </div>
+      </div> */}
+      <div className="font-bold text-3xl text-zinc-900 dark:text-zinc-200">
+        Bitcoin Halving Occured
       </div>
     </div>
   );
